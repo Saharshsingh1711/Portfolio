@@ -2,6 +2,10 @@ import { initBootSequence } from './boot-sequence.js';
 import { initSkillsFilter } from './skills-data.js';
 import { initProjectsTabs } from './projects-data.js';
 import { initContactForm } from './contact.js';
+import { initTerminal } from './terminal.js';
+import { initCursor } from './cursor.js';
+import { initParticles } from './particles.js';
+import { initScrollAnimations } from './scroll-animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize boot sequence and hero animations
@@ -15,6 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize contact form
   initContactForm();
+
+  // Initialize features
+  initTerminal();
+  initCursor();
+  initParticles();
+  initScrollAnimations();
 
   // Mobile navigation toggle
   const navToggle = document.getElementById('nav-toggle');
