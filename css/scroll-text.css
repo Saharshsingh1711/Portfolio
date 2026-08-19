@@ -41,8 +41,7 @@
 .scroll-content h2 {
   flex: 1;
   position: sticky;
-  top: 50vh;
-  transform: translateY(-50%);
+  top: calc(50vh - 0.6em);
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 800;
   color: #ffffff;
@@ -71,7 +70,7 @@
   margin: 0;
   line-height: 1.2;
   letter-spacing: -2px;
-  padding: 5px 0;
+  padding: 0;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: opacity 0.1s ease;
 }
