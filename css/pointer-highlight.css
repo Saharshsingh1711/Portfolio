@@ -1,0 +1,71 @@
+/* ========================================
+   Pointer Highlight Section
+   ======================================== */
+
+.pointer-section {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 100px 20px;
+}
+
+.pointer-container {
+  max-width: 800px;
+  font-family: var(--font-sans); /* or use display if preferred */
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+.pointer-wrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  margin-left: 0.3em; /* space between text and word */
+}
+
+.pointer-target {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+}
+
+/* Animated Border Box */
+.ph-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Animated Pointer Cursor */
+.ph-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  color: var(--neon-purple); /* Instead of blue-500, match portfolio theme */
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transform: rotate(-90deg); /* Start rotated as per original */
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+}
+
+.ph-cursor svg {
+  width: 100%;
+  height: 100%;
+}

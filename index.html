@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="/css/gamification.css" />
   <link rel="stylesheet" href="/css/cursor.css" />
   <link rel="stylesheet" href="/css/scroll-text.css" />
+  <link rel="stylesheet" href="/css/pointer-highlight.css" />
 </head>
 <body>
   <!-- Custom Cursor -->
@@ -264,6 +265,24 @@
       </div>
       <div class="scroll-footer">
         <h2 class="fluid-h2">fin.</h2>
+      </div>
+    </section>
+
+    <!-- ===== POINTER HIGHLIGHT SECTION ===== -->
+    <section id="pointer-highlight" class="pointer-section section">
+      <div class="pointer-container">
+        The best way to grow is to
+        <span class="pointer-wrapper" id="ph-wrapper">
+          <span class="pointer-target" id="ph-target">collaborate</span>
+          
+          <!-- Animated Elements (controlled by JS) -->
+          <div class="ph-box" id="ph-box"></div>
+          <div class="ph-cursor" id="ph-cursor">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
+            </svg>
+          </div>
+        </span>
       </div>
     </section>
 
