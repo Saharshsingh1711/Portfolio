@@ -1,75 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saharsh Singh — Full-Stack Developer</title>
-  <meta name="description" content="Portfolio of Saharsh Singh — Full-Stack Developer specializing in modern web technologies, cloud platforms, and AI-powered solutions." />
-  <meta name="keywords" content="Saharsh Singh, Full-Stack Developer, Portfolio, React, Node.js, Next.js, Three.js, AWS, GCloud" />
-  <meta property="og:title" content="Saharsh Singh — Full-Stack Developer" />
-  <meta property="og:description" content="Explore the digital universe of Saharsh Singh. Full-Stack Developer building modern web experiences." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Saharsh Singh — Full-Stack Developer" />
+'use client';
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+import { useEffect, useRef } from 'react';
+import ScrollAnimation from '@/components/ui/you-can-scroll';
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/hero.css" />
-  <link rel="stylesheet" href="/css/about.css" />
-  <link rel="stylesheet" href="/css/skills.css" />
-  <link rel="stylesheet" href="/css/projects.css" />
-  <link rel="stylesheet" href="/css/experience.css" />
-  <link rel="stylesheet" href="/css/contact.css" />
-  <link rel="stylesheet" href="/css/terminal.css" />
-  <link rel="stylesheet" href="/css/gamification.css" />
-  <link rel="stylesheet" href="/css/cursor.css" />
-  <link rel="stylesheet" href="/css/scroll-text.css" />
-</head>
-<body>
-  <!-- Custom Cursor -->
-  <div id="cursor-dot" class="cursor-dot"></div>
-  <div id="cursor-ring" class="cursor-ring"></div>
-  <canvas id="cursor-trail" class="cursor-trail"></canvas>
+export default function Home() {
+  const initialized = useRef(false);
 
-  <!-- Background Particles -->
-  <canvas id="particle-canvas" class="particle-canvas"></canvas>
+  useEffect(() => {
+    if (initialized.current) return;
+    initialized.current = true;
+    
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = '/js/main.js';
+    document.body.appendChild(script);
+  }, []);
 
-  <!-- Boot Overlay -->
-  <div id="boot-overlay" class="boot-overlay">
-    <div class="boot-terminal">
-      <div class="boot-line" id="boot-line-1"></div>
-      <div class="boot-line" id="boot-line-2"></div>
-      <div class="boot-line" id="boot-line-3"></div>
-      <div class="boot-progress">
-        <div class="boot-progress-bar" id="boot-progress-bar"></div>
-      </div>
-      <div class="boot-line" id="boot-line-4"></div>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav id="main-nav" class="nav">
-    <a href="#hero" class="nav-logo">
-      <span class="nav-logo-bracket">&lt;</span>SS<span class="nav-logo-bracket">/&gt;</span>
-    </a>
-    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-      <li><a href="#contact" class="nav-link nav-link--cta" data-section="contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: `
     <!-- ===== HERO SECTION ===== -->
     <section id="hero" class="hero">
       <div class="hero-content">
@@ -227,47 +176,12 @@
       <span class="section-tag section-tag--close">&lt;/experience&gt;</span>
     </section>
 
-    <!-- ===== YOU CAN SCROLL SECTION ===== -->
-    <section id="scroll-text" class="scroll-animation-section fluid">
-      <div class="scroll-header">
-        <h1 class="fluid-h1">you can<br />scroll.</h1>
-      </div>
-      <div class="scroll-content">
-        <h2>
-          <span aria-hidden="true">you can&nbsp;</span>
-          <span class="sr-only">you can ship things.</span>
-        </h2>
-        <ul class="scroll-list" aria-hidden="true" style="--count: 22">
-          <li style="--i: 0">design.</li>
-          <li style="--i: 1">prototype.</li>
-          <li style="--i: 2">solve.</li>
-          <li style="--i: 3">build.</li>
-          <li style="--i: 4">develop.</li>
-          <li style="--i: 5">debug.</li>
-          <li style="--i: 6">learn.</li>
-          <li style="--i: 7">cook.</li>
-          <li style="--i: 8">ship.</li>
-          <li style="--i: 9">prompt.</li>
-          <li style="--i: 10">collaborate.</li>
-          <li style="--i: 11">create.</li>
-          <li style="--i: 12">inspire.</li>
-          <li style="--i: 13">follow.</li>
-          <li style="--i: 14">innovate.</li>
-          <li style="--i: 15">test.</li>
-          <li style="--i: 16">optimize.</li>
-          <li style="--i: 17">teach.</li>
-          <li style="--i: 18">visualize.</li>
-          <li style="--i: 19">transform.</li>
-          <li style="--i: 20">scale.</li>
-          <li style="--i: 21">do it.</li>
-        </ul>
-      </div>
-      <div class="scroll-footer">
-        <h2 class="fluid-h2">fin.</h2>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT SECTION ===== -->
+    ` }} suppressHydrationWarning />
+      
+      {/* New React Component inserted just above Contact */}
+      <ScrollAnimation />
+      
+      <div dangerouslySetInnerHTML={{ __html: `<!-- ===== CONTACT SECTION ===== -->
     <section id="contact" class="contact section">
       <div class="section-header">
         <span class="section-tag">&lt;contact&gt;</span>
@@ -313,7 +227,7 @@
       </div>
       <span class="section-tag section-tag--close">&lt;/contact&gt;</span>
     </section>
-  </main>
+  
 
   <!-- Footer -->
   <footer class="footer">
@@ -339,7 +253,7 @@
           <span class="dot dot--yellow"></span>
           <span class="dot dot--green"></span>
         </div>
-        <span class="terminal-title">saharsh@dev:~$</span>
+        <span class="terminal-title">saharsh@dev:~\$</span>
         <button id="terminal-close" class="terminal-close" aria-label="Close Terminal">&times;</button>
       </div>
       <div class="terminal-body" id="terminal-body">
@@ -349,7 +263,7 @@
           <div class="terminal-line">&nbsp;</div>
         </div>
         <div class="terminal-input-line">
-          <span class="terminal-prompt">visitor@saharsh.dev:~$&nbsp;</span>
+          <span class="terminal-prompt">visitor@saharsh.dev:~\$&nbsp;</span>
           <input type="text" id="terminal-input" class="terminal-input" autofocus autocomplete="off" spellcheck="false" />
         </div>
       </div>
@@ -371,6 +285,7 @@
   <div id="xp-toast-container" class="xp-toast-container"></div>
 
   <!-- Scripts -->
-  <script type="module" src="/js/main.js"></script>
-</body>
-</html>
+  ` }} suppressHydrationWarning />
+    </>
+  );
+}

@@ -6,7 +6,6 @@ import { initTerminal } from './terminal.js';
 import { initCursor } from './cursor.js';
 import { initParticles } from './particles.js';
 import { initScrollAnimations } from './scroll-animations.js';
-import { initScrollText } from './you-can-scroll.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize boot sequence and hero animations
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   initParticles();
   initScrollAnimations();
-  initScrollText();
 
   // Mobile navigation toggle
   const navToggle = document.getElementById('nav-toggle');

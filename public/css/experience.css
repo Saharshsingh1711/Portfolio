@@ -1,0 +1,188 @@
+/* ========================================
+   Experience Section (Captain's Log)
+   ======================================== */
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-purple));
+  opacity: 0.3;
+}
+
+.timeline-entry {
+  position: relative;
+  margin-bottom: 60px;
+  padding-left: 60px;
+}
+.timeline-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Node */
+.timeline-node {
+  position: absolute;
+  left: 17px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.timeline-node-dot {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s var(--ease-out);
+}
+
+.timeline-entry:hover .timeline-node-dot {
+  background-color: var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.timeline-node-ring {
+  position: absolute;
+  top: -4px; left: -4px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--neon-cyan);
+  opacity: 0;
+  animation: ripple 2s infinite;
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.timeline-entry:hover .timeline-node-ring {
+  border-color: var(--neon-purple);
+}
+
+/* Card */
+.timeline-card {
+  background: var(--bg-secondary);
+  border: var(--border-glass);
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  transition: all 0.4s var(--ease-out);
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 12px; left: -10px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent var(--border-glass) transparent transparent;
+}
+/* inner triangle to match bg */
+.timeline-card::after {
+  content: '';
+  position: absolute;
+  top: 12px; left: -9px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent var(--bg-secondary) transparent transparent;
+}
+
+.timeline-card:hover {
+  transform: translateX(10px);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-card:hover::before {
+  border-right-color: rgba(168, 85, 247, 0.4);
+}
+
+.timeline-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.timeline-badge {
+  background: var(--neon-purple-dim);
+  color: var(--neon-purple);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.timeline-role {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.timeline-company {
+  font-size: 1.1rem;
+  color: var(--neon-cyan);
+  margin-bottom: 4px;
+}
+
+.timeline-duration {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.timeline-details {
+  list-style: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.timeline-details li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+.timeline-details li::before {
+  content: '>';
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--neon-purple);
+  font-family: var(--font-mono);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .timeline-line {
+    left: 16px;
+  }
+  .timeline-node {
+    left: 9px;
+  }
+  .timeline-entry {
+    padding-left: 40px;
+  }
+}

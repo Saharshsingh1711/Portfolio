@@ -1,0 +1,82 @@
+/* ========================================
+   You Can Scroll Section
+   ======================================== */
+
+#scroll-text {
+  min-height: 200vh; /* Needs height for scrolling */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-display);
+  background: var(--bg-primary); /* Matches site background */
+  overflow: hidden;
+  padding: 100px 0;
+  
+  --start: 180;
+  --end: 360;
+  --hue: 180;
+  --chroma: 0.3;
+}
+
+.scroll-header h1 {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 50vh;
+}
+
+.scroll-content {
+  position: relative;
+}
+
+.scroll-content h2 {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  z-index: 10;
+  mix-blend-mode: difference;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.scroll-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: -50vh; /* Overlap with sticky header */
+}
+
+.scroll-list li {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 700;
+  /* Apply animated color based on --hue */
+  color: oklch(75% 0.15 var(--hue));
+  padding: 20vh 0;
+  opacity: 0.2;
+}
+
+.scroll-footer {
+  margin-top: 50vh;
+}
+
+.scroll-footer h2 {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
