@@ -1,6 +1,7 @@
 import { initBootSequence } from './boot-sequence.js';
 import { initSkillsFilter } from './skills-data.js';
 import { initProjectsTabs } from './projects-data.js';
+import { initContactForm } from './contact.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize boot sequence and hero animations
@@ -11,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize projects tabs
   initProjectsTabs();
+
+  // Initialize contact form
+  initContactForm();
 
   // Mobile navigation toggle
   const navToggle = document.getElementById('nav-toggle');
