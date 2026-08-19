@@ -1,6 +1,6 @@
-// js/main.js
 import { initBootSequence } from './boot-sequence.js';
 import { initSkillsFilter } from './skills-data.js';
+import { initProjectsTabs } from './projects-data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize boot sequence and hero animations
@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize skills hex grid
   initSkillsFilter();
+
+  // Initialize projects tabs
+  initProjectsTabs();
 
   // Mobile navigation toggle
   const navToggle = document.getElementById('nav-toggle');
